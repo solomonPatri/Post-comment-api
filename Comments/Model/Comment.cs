@@ -18,23 +18,11 @@ namespace Post_Coments_Api.Comments.Model
 
          public string Name_Autor { get; set; }
 
-        [Required]
-        [Column("content")]
-
-        public string Content { get; set; }
 
         [Required]
-        [Column("created_comment")]
+        [Column("Created")]
 
-        public DateTime Created_Post { get; set; }
-
-
-        [Required]
-        [Column("update_comment")]
-
-
-        public DateTime Update_Comment { get; set; }
- 
+        public DateTime Created { get; set; }
 
         public int Post_id { get; set; }
 

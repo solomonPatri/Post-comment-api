@@ -20,9 +20,7 @@ namespace Post_Coments_Api.Data.Migrations
             Create.Table("comments")
                 .WithColumn("id").AsInt32().PrimaryKey().Identity()
                 .WithColumn("name_autor").AsString(120).NotNullable()
-                 .WithColumn("content").AsString(120).NotNullable()
-                .WithColumn("created_comment").AsDateTime().NotNullable()
-                .WithColumn("update_comment").AsDateTime().NotNullable()
+                .WithColumn("created").AsDateTime().NotNullable()
                 .WithColumn("post_id").AsInt32().ForeignKey("posts", "id").OnDelete(System.Data.Rule.Cascade);
 
         }

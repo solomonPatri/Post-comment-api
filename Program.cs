@@ -2,6 +2,8 @@ using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 using Post_Coments_Api.Data;
 using Post_Coments_Api.Data;
+using Post_Coments_Api.Posts.Repository;
+using Post_Coments_Api.Posts.Services;
 
 public class Program
 {
@@ -23,6 +25,11 @@ public class Program
         builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseMySql(builder.Configuration.GetConnectionString("Default")!,
                 new MySqlServerVersion(new Version(8, 0, 21))));
+        builder.Services.AddScoped<IPostRepo, PostRepo>();
+        builder.Services.AddScoped<ICommandServicePost, CommandServicePost>();
+        builder.Services.AddScoped<IQueryServicePost, QueryServicePost>();
+
+
 
         builder.Services.AddFluentMigratorCore()
             .ConfigureRunner(rb => rb
