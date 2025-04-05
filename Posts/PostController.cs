@@ -70,7 +70,7 @@ namespace Post_Coments_Api.Posts
         {
             try
             {
-                var response = await _command.AddCommentAsync(comment);
+                CommentResponse response = await _command.AddCommentAsync(comment);
 
                 return Created("", response);
 

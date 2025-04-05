@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Post_Coments_Api.Comments.Model;
+using Post_Coments_Api.Comments.Dtos;
 
 namespace Post_Coments_Api.Posts.Dtos
 {
@@ -21,7 +22,7 @@ namespace Post_Coments_Api.Posts.Dtos
         public DateTime Update_Post { get; set; }
 
 
-        public virtual List<Comment> Comments { get; set; } = new();
+        public virtual List<CommentResponse> Comments { get; set; } = new();
 
 
 

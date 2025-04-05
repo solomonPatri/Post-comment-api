@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Post_Coments_Api.Posts.Model
 {
+    [Table("posts")]
     public class Post
     {
         [Key]

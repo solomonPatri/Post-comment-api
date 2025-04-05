@@ -2,8 +2,8 @@
 using FluentMigrator.Builder.Create.Index;
 using Post_Coments_Api.Comments.Model;
 using Post_Coments_Api.Comments.Dtos;
-using Post_Coments_Api.Comments.Dtos;
 using Post_Coments_Api.Posts.Model;
+using Post_Coments_Api.Posts.Dtos;
 
 namespace Post_Coments_Api.Comments.Mappers
 {
@@ -15,6 +15,17 @@ namespace Post_Coments_Api.Comments.Mappers
 
             CreateMap<CommentRequest, Comment>();
             CreateMap<Comment, CommentResponse>();
+
+
+
+
+
+
+
+
+
+
+
 
 
         }

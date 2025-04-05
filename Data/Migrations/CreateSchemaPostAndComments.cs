@@ -21,7 +21,8 @@ namespace Post_Coments_Api.Data.Migrations
                 .WithColumn("id").AsInt32().PrimaryKey().Identity()
                 .WithColumn("name_autor").AsString(120).NotNullable()
                 .WithColumn("created").AsDateTime().NotNullable()
-                .WithColumn("post_id").AsInt32().ForeignKey("posts", "id").OnDelete(System.Data.Rule.Cascade);
+                .WithColumn("content").AsString(120).NotNullable()
+                .WithColumn("PostId").AsInt32().ForeignKey("posts", "id").OnDelete(System.Data.Rule.Cascade);
 
         }
 

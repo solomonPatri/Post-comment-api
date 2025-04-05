@@ -47,22 +47,21 @@ namespace Post_Coments_Api.Posts.Services
 
         public async Task<CommentResponse> AddCommentAsync(CommentRequest comentrequest)
         {
-            var post = await _repo.GetEntityByIdAsync(comentrequest.Post_id);
+            var post = await _repo.GetEntityByIdAsync(comentrequest.PostId);
             if (post == null)
                 throw new PostNotFoundException();
 
             var comment = _mapper.Map<Comment>(comentrequest);
             comment.Created = DateTime.UtcNow;
+           
 
             post.Comments.Add(comment);
 
             await _repo.UpdateAsync(post);
 
-            return _mapper.Map<CommentResponse>(post);
+           CommentResponse response = _mapper.Map<CommentResponse>(post);
 
-
-
-
+            return response;
 
         }
 

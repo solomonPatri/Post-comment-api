@@ -6,6 +6,7 @@ using Post_Coments_Api;
 
 namespace Post_Coments_Api.Comments.Model
 {
+    [Table("comments")]
     public class Comment
     {
         [Key]
@@ -17,14 +18,17 @@ namespace Post_Coments_Api.Comments.Model
         [Column("name_autor")]
 
          public string Name_Autor { get; set; }
+        [Required]
+        [Column("Content")]
 
+        public string Content { get; set; }
 
         [Required]
         [Column("Created")]
 
         public DateTime Created { get; set; }
 
-        public int Post_id { get; set; }
+        public int PostId { get; set; }
 
 
         public virtual Post Post { get; set; }

@@ -33,7 +33,7 @@ namespace Post_Coments_Api.Data
             modelBuilder.Entity<Post>()
                 .HasMany(s => s.Comments)
                 .WithOne(b => b.Post)
-                .HasForeignKey(b => b.Post_id)
+                .HasForeignKey(b => b.PostId)
                 .OnDelete(DeleteBehavior.Cascade); 
 
 
